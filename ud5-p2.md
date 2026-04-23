@@ -27,7 +27,8 @@ Este servidor tendrá el papel de:
 El servidor queda identificado dentro de la red como controlador principal del dominio.
 
 ## Captura
-
+![alt text](imagensi/1p2.jpg)
+![alt text](imagensi/2.p2.jpg)
 ## Ejercicio 2. Instalación de Active Directory Domain Services
 
 Se ha instalado el rol desde:
@@ -49,6 +50,8 @@ Este servicio es la base de un dominio Windows.
 El servidor ahora puede funcionar como controlador de dominio.
 
 ## Captura
+![alt text](imagensi/p3.jpg)
+![alt text](imagensi/4p3.JPG)
 ## Ejercicio 3. Promoción a controlador de dominio
 
 Se ha seleccionado:
@@ -73,6 +76,8 @@ El dominio **empresa.local** será el entorno de trabajo.
 El servidor pasa a ser el controlador principal del dominio.
 
 ## Captura
+![alt text](a87d9551-40e0-4d84-b728-edd5f00dcd4c.jpg)
+
 ## Ejercicio 4. Verificación del dominio
 
 Se ha accedido con:
