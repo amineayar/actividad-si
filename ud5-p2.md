@@ -1,273 +1,303 @@
- # P3. Implementación de un dominio Active Directory
- ## Ejercicio 1. Configuración inicial del servidor
+# Práctica Active Directory Domain Services (AD DS)
 
-Para cambiar el nombre del equipo se ha configurado:
-- Nombre del equipo → srv-ad01
+## Alumno
+Amine ayar
 
-Después se ha reiniciado el sistema.
+---
 
-Para comprobar el nombre:
+# Ejercicio 1 – Instalación del rol AD DS
 
-hostname
+En este ejercicio se instaló el rol Active Directory Domain Services desde el Administrador del servidor.
 
+## Pasos realizados
 
-### Explicación
+1. Abrir el Administrador del servidor.
+2. Seleccionar:
+   - Agregar roles y características.
+3. Elegir:
+   - Active Directory Domain Services.
+4. Instalar el rol.
+5. Promocionar el servidor a controlador de dominio.
 
-Se ha configurado el servidor con el nombre **srv-ad01**, que indica que será el controlador de dominio.
+## Capturas
 
-El comando `hostname` permite verificar el nombre del equipo.
+- [CAPTURA instalación AD DS]
+- [CAPTURA promoción controlador dominio]
 
-Este servidor tendrá el papel de:
-- Controlador de dominio  
-- Gestión de usuarios  
-- Administración de recursos  
+---
 
-### Conclusión
+# Ejercicio 2 – Creación del dominio
 
-El servidor queda identificado dentro de la red como controlador principal del dominio.
+Se creó el dominio:
 
-## Captura
-![alt text](imagensi/1p2.jpg)
-![alt text](imagensi/2.p2.jpg)
-## Ejercicio 2. Instalación de Active Directory Domain Services
+empresa.local
 
-Se ha instalado el rol desde:
-- Server Manager → Add Roles and Features  
-- Active Directory Domain Services  
+El servidor quedó configurado como controlador de dominio principal.
 
-### Explicación
+## Capturas
 
-El rol **Active Directory Domain Services (AD DS)** permite:
+- [CAPTURA creación dominio]
+- [CAPTURA configuración DNS]
 
-- Gestionar usuarios y equipos  
-- Centralizar autenticación  
-- Administrar recursos de red  
+---
 
-Este servicio es la base de un dominio Windows.
+# Ejercicio 3 – Creación de usuarios
 
-### Conclusión
+Se crearon los siguientes usuarios del dominio:
 
-El servidor ahora puede funcionar como controlador de dominio.
+- usuario1
+- usuario2
 
-## Captura
-![alt text](imagensi/p3.jpg)
-![alt text](imagensi/4p3.JPG)
-## Ejercicio 3. Promoción a controlador de dominio
+Desde la herramienta:
 
-Se ha seleccionado:
-- Promote this server to a domain controller  
-- Add a new forest  
+Usuarios y equipos de Active Directory
 
-Dominio:
-- empresa.local  
+## Capturas
 
-### Explicación
+- [CAPTURA usuario1]
+- [CAPTURA usuario2]
 
-Convertir un servidor en controlador de dominio significa:
+---
 
-- Crear un dominio  
-- Gestionar autenticación centralizada  
-- Almacenar usuarios y políticas  
+# Ejercicio 4 – Configuración de perfiles móviles
 
-El dominio **empresa.local** será el entorno de trabajo.
+Se creó y compartió la carpeta:
 
-### Conclusión
+C:\perfiles
 
-El servidor pasa a ser el controlador principal del dominio.
+Ruta compartida:
 
-## Captura
-![alt text](a87d9551-40e0-4d84-b728-edd5f00dcd4c.jpg)
+\\srv-ad01\perfiles
 
-## Ejercicio 4. Verificación del dominio
+## Capturas
 
-Se ha accedido con:
-- empresa\Administrator  
+- [CAPTURA carpeta perfiles]
+- [CAPTURA permisos compartidos]
 
-Se ha abierto:
-- Active Directory Users and Computers  
+---
 
-### Explicación
+# Ejercicio 5 – Configuración de perfiles de usuario
 
-Se comprueba que existe el dominio **empresa.local**.
+En las propiedades de los usuarios se configuró la ruta del perfil móvil:
 
-En la estructura aparecen:
-- Usuarios  
-- Equipos  
-- Grupos  
-
-Esto representa la organización del dominio.
-
-### Conclusión
-
-El dominio se ha creado correctamente y está operativo.
-
-### Fuentes consultadas
-- https://learn.microsoft.com
-## Ejercicio 5. Creación de usuarios
-
-Se han creado:
-- usuario1  
-- usuario2  
-
-### Explicación
-
-Un **usuario de dominio**:
-- Se almacena en el servidor  
-- Puede acceder desde cualquier equipo del dominio  
-
-Un **usuario local**:
-- Solo existe en un equipo  
-- No está centralizado  
-
-### Conclusión
-
-Los usuarios de dominio permiten gestión centralizada.
-
-### Fuentes consultadas
-- https://learn.microsoft.com
-## Ejercicio 6. Carpeta de perfiles móviles
-
-Se ha creado:
-- C:\perfiles  
-
-Se ha compartido como:
-- perfiles  
-
-### Explicación
-
-Esta carpeta almacenará los perfiles de usuario.
-
-Permite:
-- Guardar configuraciones  
-- Mantener entorno del usuario  
-
-### Conclusión
-
-El servidor almacenará los perfiles de todos los usuarios.
-
-### Fuentes consultadas
-- https://learn.microsoft.com
-## Ejercicio 7. Configuración de perfiles móviles
-
-Ruta configurada:
 \\srv-ad01\perfiles\%username%
 
-### Explicación
+Ruta utilizada:
 
-Un perfil móvil:
-- Se guarda en el servidor  
-- Se carga en cualquier equipo  
+Perfil → Ruta de acceso al perfil
 
-Ventajas:
-- Movilidad  
-- Configuración centralizada  
+## Capturas
 
-### Conclusión
+- [CAPTURA perfil usuario1]
+- [CAPTURA perfil usuario2]
 
-Los usuarios tendrán su entorno en cualquier equipo.
+---
 
-### Fuentes consultadas
-- https://learn.microsoft.com
-## Ejercicio 8. Unión al dominio
+# Ejercicio 6 – Instalación de Windows 11
 
-Dominio:
-- empresa.local  
+Se instaló Windows 11 como equipo cliente del dominio.
 
-### Explicación
+Nombre del equipo:
 
-Unir un equipo al dominio significa:
+cli01
 
-- Autenticarse contra el servidor  
-- Formar parte de la red centralizada  
+## Capturas
 
-### Conclusión
+- [CAPTURA Windows 11 instalado]
 
-El cliente pasa a formar parte del dominio.
+---
 
-### Fuentes consultadas
-- https://learn.microsoft.com
-## Ejercicio 9. Inicio de sesión
+# Ejercicio 7 – Unión del equipo al dominio
 
-Se inicia sesión con:
-- empresa\usuario1  
-- empresa\usuario2  
+El cliente Windows 11 se unió al dominio:
 
-### Explicación
+empresa.local
 
-Se crean perfiles en el servidor automáticamente.
+## Pasos realizados
 
-Esto confirma que:
-- El dominio funciona  
-- Los perfiles móviles están activos  
+1. Ejecutar:
+   sysdm.cpl
 
-### Conclusión
+2. Abrir:
+   Nombre de equipo.
 
-Los usuarios pueden trabajar desde cualquier equipo.
+3. Pulsar:
+   Cambiar.
 
-### Fuentes consultadas
-- https://learn.microsoft.com
-## Ejercicio 10. Política de contraseñas
+4. Seleccionar:
+   Dominio.
 
-Se ha modificado:
-- Default Domain Policy  
+5. Introducir:
+   empresa.local
 
-### Explicación
+## Capturas
 
-Las **GPO (Group Policy Objects)** permiten:
+- [CAPTURA unión dominio]
+- [CAPTURA reinicio cliente]
 
-- Definir reglas de seguridad  
-- Aplicar configuraciones a todos los usuarios  
+---
 
-Ejemplo:
-- Longitud de contraseña  
-- Complejidad  
+# Ejercicio 8 – Inicio de sesión con usuarios del dominio
 
-### Conclusión
+Se inició sesión con usuarios del dominio:
 
-Las políticas permiten controlar la seguridad del dominio.
+- usuario1@empresa.local
+- usuario2@empresa.local
 
-### Fuentes consultadas
-- https://learn.microsoft.com
-## Ejercicio 11. Verificación de políticas
+Contraseña utilizada:
 
-Se ha ejecutado:
+Admin1234*
+
+## Observaciones
+
+El usuario usuario1 inició sesión correctamente.
+
+El usuario usuario2 presentó problemas relacionados con el perfil móvil, aunque la autenticación del dominio funcionó correctamente.
+
+## Capturas
+
+- [CAPTURA login usuario1]
+- [CAPTURA escritorio usuario1]
+- [CAPTURA error perfil usuario2]
+
+---
+
+# Ejercicio 9 – Aplicación de perfiles móviles
+
+Se comprobó el funcionamiento de los perfiles móviles desde el dominio Active Directory.
+
+## Capturas
+
+- [CAPTURA carpeta perfiles]
+- [CAPTURA acceso usuario]
+
+---
+
+# Ejercicio 10 – Modificación de la política de contraseñas
+
+Se modificó la política del dominio desde:
+
+Group Policy Management
+
+Política utilizada:
+
+Default Domain Policy
+
+## Ruta utilizada
+
+Configuración del equipo
+→ Directivas
+→ Configuración de Windows
+→ Configuración de seguridad
+→ Directivas de cuenta
+→ Directiva de contraseñas
+
+## Cambio realizado
+
+Longitud mínima de contraseña = 8
+
+## Explicación de las GPO
+
+Las Group Policy Objects (GPO) permiten administrar de forma centralizada la configuración de seguridad y comportamiento de usuarios y equipos dentro de un dominio Active Directory.
+
+Las GPO permiten:
+- Aplicar políticas de seguridad.
+- Configurar contraseñas.
+- Restringir accesos.
+- Configurar usuarios y equipos automáticamente.
+
+## Capturas
+
+- [CAPTURA Default Domain Policy]
+- [CAPTURA longitud mínima contraseña]
+
+## Documentación consultada
+
+Microsoft Learn – Group Policy Overview
+
+https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/group-policy/group-policy-overview
+
+---
+
+# Ejercicio 11 – Actualización de políticas de grupo
+
+En Windows 11 se ejecutaron los comandos:
 
 gpupdate /force
 
+y
 
-### Explicación
+gpresult /r
 
-Este comando actualiza las políticas del dominio.
+## Explicación
 
-Permite comprobar:
-- Que las reglas se aplican  
-- Que el cliente recibe configuración  
+El comando gpupdate /force actualiza las políticas de grupo del dominio.
 
-### Conclusión
+El comando gpresult /r permite comprobar las políticas aplicadas al usuario y al equipo.
 
-Las políticas del dominio se aplican correctamente en el cliente.
+## Capturas
 
-### Fuentes consultadas
-- https://learn.microsoft.com
-## Ejercicio 12. Comprobación final
+- [CAPTURA gpupdate]
+- [CAPTURA gpresult]
 
-Se comprueba:
-- Equipo unido al dominio  
-- Usuarios funcionando  
-- Perfiles móviles activos  
-- Políticas aplicadas  
+## Documentación consultada
 
-### Explicación
+Microsoft Learn – gpupdate
 
-El sistema de dominio permite:
+https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/gpupdate
 
-- Gestión centralizada  
-- Control de usuarios  
-- Seguridad mediante políticas  
+---
 
-Todo se administra desde el servidor.
+# Ejercicio 12 – Comprobación final del dominio
 
-### Conclusión
+Se comprobó el correcto funcionamiento del dominio Active Directory:
 
-La infraestructura de dominio funciona correctamente y permite una administración eficiente de la red.
+empresa.local
 
+## Verificaciones realizadas
+
+### Servidor
+
+Comando utilizado:
+
+hostname
+
+Resultado:
+
+srv-ad01
+
+### Cliente Windows 11
+
+Comando utilizado:
+
+hostname
+
+Resultado:
+
+cli01
+
+### Dominio
+
+El cliente Windows 11 quedó unido correctamente al dominio empresa.local.
+
+## Capturas
+
+- [CAPTURA usuarios dominio]
+- [CAPTURA hostname servidor]
+- [CAPTURA hostname cliente]
+- [CAPTURA dominio empresa.local]
+
+---
+
+# Conclusión
+
+Durante la práctica se instaló y configuró un controlador de dominio Active Directory utilizando Windows Server.
+
+También se configuraron usuarios, perfiles móviles, políticas de grupo y un cliente Windows 11 unido al dominio.
+
+Finalmente se comprobó el correcto funcionamiento de:
+- Active Directory
+- DNS
+- Usuarios del dominio
+- GPO
+- Inicio de sesión desde el cliente

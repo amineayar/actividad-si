@@ -30,7 +30,8 @@ ip route
 ip addr
 ![alt text](imagensi/2.png)
 ip route
-![alt text](image.png)
+![alt text](image-1.png)
+
 
 ### Explicación
 La red local configurada es **10.0.2.0/24**, ya que la dirección IP asignada es **10.0.2.15** con máscara de red 255.255.255.0.
@@ -85,8 +86,7 @@ ip a
 ```
 ## Captura
 ![alt text](image-1.png)
-![alt text](imagensi/4.1.png)
-![alt text](imagensi/4.png)
+![alt text](image-2.png)
 ![alt text](imagensi/4.ipa.png)
 # Explicacion
 Se ha configurado una dirección IP estática mediante Netplan.
@@ -212,6 +212,7 @@ Resultado
 Se reciben respuestas correctamente, lo que indica que la resolución de nombres funciona de forma adecuada.
 
 ## Capturas
+![alt text](image-3.png)
 ![alt text](imagensi/6.png)
 ![alt text](imagensi/6.2.png)
 ## 7. Tabla de rutas del sistema
@@ -273,14 +274,8 @@ En cuanto a los protocolos utilizados:
 En conclusión, el comando `ss` permite identificar qué servicios están activos y qué puertos están abiertos en el sistema.
 
 
-### Salida obtenida
-````
-Netid State Recv-Q Send-Q Local Address:Port Peer Address:Port
-tcp LISTEN 0 128 0.0.0.0:22 0.0.0.0:*
-tcp LISTEN 0 128 127.0.0.1:631 0.0.0.0:*
-udp UNCONN 0 0 0.0.0.0:68 0.0.0.0:*
-````
-
+### captura
+![alt text](<9.system status ssh.png>)
 # Ejercicio 9. Instalación y configuración del servicio SSH
 
 Para instalar el servicio SSH en el servidor se han ejecutado los siguientes comandos:
@@ -320,8 +315,11 @@ En cuanto al protocolo utilizado:
 
 En conclusión, el servicio SSH permite administrar el servidor de forma remota y segura a través del puerto 22.
 ## Caprutras
-![alt text](imagensi/image8.png)
+![alt text](<9.system status ssh.png>)
 ![alt text](imagensi/9.png)
+/Users/user/Downloads/Captura de pantalla -2026-04-15 17-05-10 (1).png
+
+![alt text](<9.system status ssh-1.png>)
 
 ## Ejercicio 10. Acceso remoto al servidor
 
@@ -338,21 +336,10 @@ hostname
 
 Estos comandos permiten comprobar el usuario conectado y la máquina en la que se están ejecutando.
 
-### Explicación
+### captura
 
-La conexión se realiza mediante **SSH (Secure Shell)**, que permite acceder de forma segura a otro equipo a través de la red.
-
-En la salida de los comandos se observa:
-
-- **whoami** → muestra el usuario con el que se ha iniciado sesión en el servidor  
-- **hostname** → muestra el nombre del servidor (por ejemplo, srv01)  
-
-Esto indica que:
-- El usuario conectado es el mismo con el que se ha accedido por SSH  
-- Los comandos se están ejecutando en el servidor, no en el cliente  
-
-SSH utiliza cifrado para proteger la comunicación, por lo que es una herramienta fundamental para la administración remota de sistemas.
-
+![alt text](<10 connect host.png>)
+![alt text](<10 after host.png>)
 ## Ejercicio 11. Análisis del estado de las interfaces
 
 Para comprobar el estado de las interfaces de red se ha ejecutado el siguiente comando:
@@ -373,17 +360,7 @@ El estado de cada interfaz puede ser:
 
 ### Explicación
 
-El comando `ip link` muestra información sobre las interfaces de red del sistema.
-
-Cada línea incluye:
-- **Nombre de la interfaz** → identificador (lo, enp0s3, etc.)  
-- **Estado (UP/DOWN)** → indica si la interfaz está activa  
-- **mtu** → tamaño máximo de paquete  
-- **link/ether** → dirección MAC de la interfaz  
-
-La interfaz **lo** (loopback) siempre está activa y se utiliza para la comunicación interna del sistema.
-
-Las interfaces **enp0s3** y **enp0s8** corresponden a las tarjetas de red configuradas en la máquina virtual.
+![alt text](11-1.png)
 
 ### Conclusión
 
@@ -396,11 +373,7 @@ ip neigh
 
 
 Este comando muestra la relación entre direcciones IP y direcciones MAC en la red local.
-
-En la salida aparece, por ejemplo:
-- **192.168.50.20** → IP de la otra máquina  
-- **xx:xx:xx:xx:xx:xx** → dirección MAC asociada  
-
+![alt text](<12 ip neigh.png>)
 ### Explicación
 
 La tabla ARP permite asociar direcciones IP con direcciones MAC dentro de una red local.
@@ -437,6 +410,8 @@ El comando `scp` permite copiar archivos entre equipos a través de SSH de forma
 La transferencia se realiza mediante cifrado, garantizando la seguridad de los datos.
 
 En el servidor se puede comprobar que el archivo se ha copiado correctamente accediendo a la ruta indicada.
+![alt text](<creae archivo.png>)
+![alt text](<prueba txt.png>)
 
 ### Conclusión
 
@@ -478,7 +453,8 @@ Esto demuestra que el servicio SSH controla el acceso remoto al sistema.
 
 El servicio SSH debe estar activo para permitir conexiones remotas al servidor.
 
-
+![alt text](<14 kaml.png>)
+![alt text](14.1.2-1.png)
 
 
 ## Ejercicio 15. Reinicio y comprobación de persistencia
@@ -492,7 +468,10 @@ Para comprobar la configuración:
 
 ip a
 hostname
-systemctl status ssh
+/![alt text](<15 hostname ubuntu.png>)
+![alt text](<15 ipa.png>)
+![alt text](<15 ipa tania.png>)
+![alt text](<15 hostname ubuntu (1).png>)
 
 
 ### Explicación
