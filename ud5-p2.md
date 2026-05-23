@@ -21,8 +21,8 @@ En este ejercicio se instaló el rol Active Directory Domain Services desde el A
 
 ## Capturas
 
-- [CAPTURA instalación AD DS]
-- [CAPTURA promoción controlador dominio]
+- [\[CAPTURA instalación AD DS\]](<lwla hadi.png>)
+- ![\[CAPTURA promoción controlador dominio\]](imagensi/1.2.png)
 
 ---
 
@@ -36,8 +36,8 @@ El servidor quedó configurado como controlador de dominio principal.
 
 ## Capturas
 
-- [CAPTURA creación dominio]
-- [CAPTURA configuración DNS]
+- ![\[CAPTURA creación dominio\]](2.1.png)
+- ![alt text](2.2.png)
 
 ---
 
@@ -54,8 +54,10 @@ Usuarios y equipos de Active Directory
 
 ## Capturas
 
-- [CAPTURA usuario1]
-- [CAPTURA usuario2]
+- ![\[CAPTURA usuario1\]](3.1.png)
+- ![alt text](3.2.png)
+![alt text](3.3.png)
+![alt text](3,4.png)
 
 ---
 
@@ -71,8 +73,7 @@ Ruta compartida:
 
 ## Capturas
 
-- [CAPTURA carpeta perfiles]
-- [CAPTURA permisos compartidos]
+- ![alt text](4.1.png)
 
 ---
 
@@ -88,8 +89,7 @@ Perfil → Ruta de acceso al perfil
 
 ## Capturas
 
-- [CAPTURA perfil usuario1]
-- [CAPTURA perfil usuario2]
+- ![alt text](5.1.png)
 
 ---
 
@@ -103,7 +103,7 @@ cli01
 
 ## Capturas
 
-- [CAPTURA Windows 11 instalado]
+- ![\[CAPTURA Windows 11 instalado\]](6.1.png)
 
 ---
 
@@ -132,8 +132,8 @@ empresa.local
 
 ## Capturas
 
-- [CAPTURA unión dominio]
-- [CAPTURA reinicio cliente]
+- ![alt text](7.1.png)
+![alt text](7.2.png)
 
 ---
 
@@ -156,9 +156,9 @@ El usuario usuario2 presentó problemas relacionados con el perfil móvil, aunqu
 
 ## Capturas
 
-- [CAPTURA login usuario1]
-- [CAPTURA escritorio usuario1]
-- [CAPTURA error perfil usuario2]
+- ![\[CAPTURA login usuario1\]](<89bl men 8.png>)
+- ![alt text](8.png)
+- ![alt text](8.3.png)
 
 ---
 
@@ -168,8 +168,7 @@ Se comprobó el funcionamiento de los perfiles móviles desde el dominio Active 
 
 ## Capturas
 
-- [CAPTURA carpeta perfiles]
-- [CAPTURA acceso usuario]
+- ![alt text](9.png)
 
 ---
 
@@ -208,8 +207,8 @@ Las GPO permiten:
 
 ## Capturas
 
-- [CAPTURA Default Domain Policy]
-- [CAPTURA longitud mínima contraseña]
+- ![alt text](10.png)
+- ![alt text](10.2.png)
 
 ## Documentación consultada
 
@@ -237,8 +236,8 @@ El comando gpresult /r permite comprobar las políticas aplicadas al usuario y a
 
 ## Capturas
 
-- [CAPTURA gpupdate]
-- [CAPTURA gpresult]
+- ![alt text](11.png)
+![alt text](11.2.png)
 
 ## Documentación consultada
 
@@ -282,10 +281,10 @@ El cliente Windows 11 quedó unido correctamente al dominio empresa.local.
 
 ## Capturas
 
-- [CAPTURA usuarios dominio]
-- [CAPTURA hostname servidor]
-- [CAPTURA hostname cliente]
-- [CAPTURA dominio empresa.local]
+- ![alt text](12.png)
+- ![alt text](12.2.png)
+- ![alt text](12,3.png)
+
 
 ---
 
